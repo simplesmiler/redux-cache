@@ -1,0 +1,48 @@
+{
+  "name": "redux-cache",
+  "description": "Higher order cache reducer",
+  "version": "0.1.0",
+  "author": "Denis Karabaza <denis.karabaza@gmail.com>",
+  "browserify": {
+    "transform": [
+      "envify"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/simplesmiler/redux-cache/issues"
+  },
+  "dependencies": {
+    "envify": "^3.4.0",
+    "object-path-immutable": "^0.2.0",
+    "redux": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "mkdirp": "^0.5.1",
+    "rollup": "^0.21.2",
+    "rollup-plugin-commonjs": "^1.4.0",
+    "rollup-plugin-npm": "^1.1.0",
+    "rollup-plugin-replace": "^1.1.0",
+    "uglify-js": "^2.6.1"
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "homepage": "https://github.com/simplesmiler/redux-cache",
+  "keywords": [
+    "cache",
+    "redux"
+  ],
+  "license": "MIT",
+  "main": "dist/redux-cache.common.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplesmiler/redux-cache"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "lint": "./node_modules/.bin/eslint index.js build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
