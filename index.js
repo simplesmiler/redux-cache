@@ -1,6 +1,7 @@
 import immutable from 'object-path-immutable';
 
 export { reducer };
+export { select };
 export var actions = {
   update: update,
   invalidate: invalidate,
@@ -81,6 +82,31 @@ function reduceInvalidate(state, action) {
 
   return state;
 }
+
+
+// === @SECTION: select === //
+
+function select(cache, id, keys) {
+  var result = {
+    id: id,
+    ready: {},
+  };
+
+  var entity = cache[id];
+
+  for (var i = 0, l = keys.length; i < l; i++) {
+    var key = keys[i];
+    if (entity !== undefined && entity[key] !== undefined) {
+      result[key] = entity[key];
+      result.ready[key] = true;
+    } else {
+      result.ready[key] = false;
+    }
+  }
+
+  return result;
+}
+
 
 
 
